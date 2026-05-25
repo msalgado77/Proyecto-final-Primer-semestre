@@ -19,5 +19,5 @@ class Presupuesto:
         dinero_necesario = objeto_mantenimiento.presupuesto
         self.cantidad_asignada = dinero_necesario
         print(f"Se han asignado ${self.cantidad_asignada}"
-              "para el Mantenimiento")
+              " para el Mantenimiento")
         

@@ -23,16 +23,16 @@ class Mantenimientos:
         print("La información del Mantenimiento a sido actualizada con éxito!")
 
 
-# Método para emparejar 
-def emparejar_prioridad(self, objeto_prioridad):
+    # Método para emparejar 
+    def emparejar_prioridad(self, objeto_prioridad):
 
-    nombre_via = objeto_prioridad.via.nombre
+        nombre_via = objeto_prioridad.via.nombre
         
-    print(f"------EVALUANDO PRIORIDAD PARA: {nombre_via}------")
-    print(f"Estado reportado: {objeto_prioridad.estado}")
+        print(f"------EVALUANDO PRIORIDAD PARA: {nombre_via}------")
+        print(f"Estado reportado: {objeto_prioridad.estado}")
         
-    if objeto_prioridad.puntaje_prioridad > 20:
-        print(f"¡ALERTA ROJA! La vía requiere mantenimiento URGENTE")
-        self.presupuesto += 2000
-    else:
-        print(f"La vía entra a lista de espera")
+        if objeto_prioridad.puntaje_prioridad > 20:
+            print(f"¡ALERTA ROJA! La vía requiere mantenimiento URGENTE")
+            self.presupuesto += 2000
+        else:
+            print(f"La vía entra a lista de espera")

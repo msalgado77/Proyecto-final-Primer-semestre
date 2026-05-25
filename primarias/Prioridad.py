@@ -1,4 +1,4 @@
-from vias import Vias
+from primarias.vias import Vias
 
 
 class Prioridad:
