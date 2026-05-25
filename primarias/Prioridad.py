@@ -3,7 +3,7 @@ from vias import Vias
 
 class Prioridad:
 
-    def _init_(
+    def __init__(
         self,
         estado_actual: str,
         criterios_daños: str,
