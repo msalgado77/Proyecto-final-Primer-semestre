@@ -4,6 +4,7 @@ from primarias.Prioridad import Prioridad
 from primarias.Mantenimientos import Mantenimientos
 from secundarias.Presupuesto import Presupuesto
 from secundarias.Historial_mantenimiento import Hismantenimiento
+from secundarias.reportes import Reportes
 
 print("========================================")
 print("=== INTEGRACIÓN TOTAL DEL PROYECTO ===")
@@ -49,3 +50,26 @@ print("\n------Datos del mantenimiento------")
 print(f"Tiempo desde último mantenimiento: {historial_avenida.tiempo} días")
 print(f"Tipo de mantenimiento: {historial_avenida.tipo}")
 print(f"Costo total: ${historial_avenida.costo}")
+
+print("\n" + "="*45)
+print("=== SISTEMA GENERAL DE AUDITORÍA Y REPORTES ===")
+print("="*45 + "\n")
+
+reporte_vias = Reportes("Avenida Central", "26/05/2026", "Pendiente")
+
+print("------ Estado Inicial del Reporte ------")
+print(reporte_vias.mostrar_informacion())
+
+print("\n>>> Vinculando reporte con la infraestructura vial...")
+reporte_vias.enlazar_con_via(via_principal)
+print("\n>>> Actualizando estado del reporte tras inspección técnica...")
+reporte_vias.actualizar_informacion(
+    nombre_via="Avenida Central - Tramo Norte", 
+    fecha="26/05/2026", 
+    estado="En Ejecución"
+)
+
+
+print("\n------ Estado Final del Reporte (Consolidado) ------")
+reporte_vias.mostrar_informacion()  # <--- QUÍTALE EL PRINT DE AFUERA, DÉJALO SOLO ASÍ
+print("\n" + "="*45)
