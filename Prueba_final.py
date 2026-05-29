@@ -71,5 +71,5 @@ reporte_vias.actualizar_informacion(
 
 
 print("\n------ Estado Final del Reporte (Consolidado) ------")
-reporte_vias.mostrar_informacion()  # <--- QUÍTALE EL PRINT DE AFUERA, DÉJALO SOLO ASÍ
+print(reporte_vias.mostrar_informacion())
 print("\n" + "="*45)
