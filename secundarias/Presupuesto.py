@@ -14,10 +14,19 @@ class Presupuesto:
         print("Presupuesto actualizado!"
               f"Nueva cantidad ${self.cantidad_disponible}")
         
-    # Conectamos Presupuesto con Mantenimientos
+# Conectamos Presupuesto con Mantenimientos
     def emparejar_con_mantenimientos(self, objeto_mantenimiento):
         dinero_necesario = objeto_mantenimiento.presupuesto
-        self.cantidad_asignada = dinero_necesario
-        print(f"Se han asignado ${self.cantidad_asignada}"
-              " para el Mantenimiento")
+        
+        # Verificamos si la plata disponible alcanza para la obra
+        if self.cantidad_disponible >= dinero_necesario:
+            self.cantidad_asignada = dinero_necesario
+            self.cantidad_disponible -= dinero_necesario  
+            print(f"Se han asignado ${self.cantidad_asignada} "
+                  "para el Mantenimiento")
+        else:
+        
+            print("¡ERROR FINANCIERO! Fondos insuficientes.")
+            print(f"Se requieren ${dinero_necesario} pero la alcaldía solo"
+                  f" tiene ${self.cantidad_disponible} disponibles.")
         

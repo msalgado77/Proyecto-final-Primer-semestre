@@ -73,3 +73,24 @@ reporte_vias.actualizar_informacion(
 print("\n------ Estado Final del Reporte (Consolidado) ------")
 print(reporte_vias.mostrar_informacion())
 print("\n" + "="*45)
+
+
+
+
+print("\n" + "="*45)
+print("=== PRUEBAS DE EDGE CASES (CASOS EXTREMOS) ===")
+print("="*45 + "\n")
+
+print("--- Edge Case 1: Presupuesto Insuficiente ---")
+# Creamos un presupuesto muy bajito
+presupuesto_bajo = Presupuesto(2000) 
+
+# Creamos una obra que cuesta muchísimo más de lo que hay
+mantenimiento_lujo = Mantenimientos(50000, 30, ["Asfalto Premium",
+                                                "Maquinaria Extra"])
+
+print("... Intentando emparejar una obra de $50000"
+      " con un fondo de solo $2000 ...")
+# El sistema debería manejar este error y no permitir la obra
+presupuesto_bajo.emparejar_con_mantenimientos(mantenimiento_lujo)
+print("\n")
