@@ -13,10 +13,12 @@ print("========================================\n")
 # Creamos una Vía
 
 via_principal = Vias(
-    "Avenida Central", "Norte", 100.5, 10.5, "Principal", "Asfalto", "15/05/2026"
+    "Avenida Central", "Norte", 100.5, 10.5, "Principal", "Asfalto",
+    "15/05/2026"
 )
 
-prioridad_avenida = Prioridad("Crítico", "Huecos profundos", 15, 10, via_principal)
+prioridad_avenida = Prioridad("Crítico", "Huecos profundos",
+                              15, 10, via_principal)
 prioridad_avenida.asignar_puntaje()
 
 print("------Datos de la Prioridad------")
@@ -75,8 +77,7 @@ print(reporte_vias.mostrar_informacion())
 print("\n" + "="*45)
 
 
-
-
+# Edge case
 print("\n" + "="*45)
 print("=== PRUEBAS DE EDGE CASES (CASOS EXTREMOS) ===")
 print("="*45 + "\n")
