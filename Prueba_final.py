@@ -77,7 +77,7 @@ print(reporte_vias.mostrar_informacion())
 print("\n" + "="*45)
 
 
-# Edge case
+# Edge case 1
 print("\n" + "="*45)
 print("=== PRUEBAS DE EDGE CASES (CASOS EXTREMOS) ===")
 print("="*45 + "\n")
@@ -95,3 +95,29 @@ print("... Intentando emparejar una obra de $50000"
 # El sistema debería manejar este error y no permitir la obra
 presupuesto_bajo.emparejar_con_mantenimientos(mantenimiento_lujo)
 print("\n")
+
+
+print("--- Edge Case 2: Límite Exacto de Presupuesto (que quede en $0) ---")
+# La alcaldía tiene 10000 y la obra cuesta exactamente 10000
+presupuesto_exacto = Presupuesto(10000)
+mantenimiento_exacto = Mantenimientos(10000, 5, ["Pintura de líneas"])
+
+print(">>> Intentando pagar una obra de $10000 con un fondo de exactamente"
+      "      $10000...")
+presupuesto_exacto.emparejar_con_mantenimientos(mantenimiento_exacto)
+print(f"Saldo restante en la alcaldía: ${presupuesto_exacto.
+      cantidad_disponible}\n")
+
+
+print("--- Edge Case 3: Vía en Perfecto Estado (Valores Cero) ---")
+# Creamos una vía recién inaugurada
+via_perfecta = Vias("Calle Nueva", "Sur", 50.0, 5.0, "Secundaria", 
+                    "Concreto", "28/05/2026")
+
+# Le pasamos 0 accidentes y 0 tráfico
+print(">>> Evaluando prioridad para una vía con 0 accidentes y 0 tráfico...")
+prioridad_baja = Prioridad("Excelente", "Ninguno", 0, 0, via_perfecta)
+prioridad_baja.asignar_puntaje()
+
+print(prioridad_baja.mostrar_informacion())
+print("\n" + "="*45)
